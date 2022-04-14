@@ -1,0 +1,20 @@
+{% extends "Base.html" %}
+{% block content %}
+ <head>
+        <title>{{ city }} - Weather</title>
+ </head>
+<body>
+    <h1>Hello, {{ current_user.username }}!</h1>
+    <h2>Today's temperature for the city of {{city}} is  {{ temp }} Celsius!</h2>
+    <h2>The wind speed is, {{ wind_speed }} knots!</h2>
+    <h1>{{description}}</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.city.label }}<br>
+            {{ form.city(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+{% endblock %}
